@@ -1,0 +1,209 @@
+.loading {
+  padding: 200px 0;
+  text-align: center;
+  font-family: var(--mono);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+  font-size: 13px;
+}
+
+.hero { padding-bottom: 60px; border-bottom: 1px solid var(--line); margin-bottom: 80px; }
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 80px;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.hero-text { max-width: 640px; }
+
+.hero-title {
+  font-size: clamp(64px, 9vw, 132px);
+  line-height: 0.85;
+  letter-spacing: 0.01em;
+  color: var(--bone);
+  margin: 16px 0 28px;
+}
+
+.hero-title .accent { color: var(--lime); }
+
+.hero-lede {
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--bone-dim);
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.stat-block {
+  padding: 28px 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.stat-block.accent { background: linear-gradient(135deg, var(--lime-dim), transparent); border-color: var(--lime); }
+
+.stat-big {
+  font-size: 64px;
+  line-height: 1;
+  color: var(--bone);
+  letter-spacing: 0.02em;
+}
+
+.stat-block.accent .stat-big { color: var(--lime); }
+
+.hero-ticker {
+  margin-top: 40px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
+  overflow: hidden;
+  position: relative;
+  background: var(--bg-deep);
+}
+
+.ticker-track {
+  display: flex;
+  gap: 32px;
+  white-space: nowrap;
+  animation: ticker 50s linear infinite;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--bone-dim);
+}
+
+.ticker-team { color: var(--lime); font-weight: 700; }
+.ticker-vs { color: var(--mid); }
+.ticker-stage { text-transform: uppercase; font-size: 10px; }
+.ticker-sep { color: var(--mid); }
+
+.featured-section { margin-bottom: 80px; }
+
+.see-all {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--lime);
+  transition: opacity 0.2s;
+}
+
+.see-all:hover { opacity: 0.7; }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+  gap: 20px;
+}
+
+.top-performers { margin-bottom: 60px; }
+
+.performers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.performer-card {
+  padding: 36px 28px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  transition: all 0.2s;
+}
+
+.performer-card.highlight {
+  background: linear-gradient(135deg, var(--surface), var(--lime-dim));
+  border-color: var(--lime);
+}
+
+.performer-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--lime);
+}
+
+.performer-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+}
+
+.performer-emoji {
+  font-size: 64px;
+  line-height: 1;
+}
+
+.performer-name {
+  font-size: 32px;
+  color: var(--bone);
+  line-height: 1;
+}
+
+.performer-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  width: 100%;
+}
+
+.performer-stat-num {
+  font-size: 48px;
+  color: var(--lime);
+  line-height: 1;
+}
+
+.performer-stat-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+}
+
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; padding: 40px 0; }
+  .cards-grid { grid-template-columns: 1fr; }
+  .performers-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .hero-stats { grid-template-columns: 1fr; }
+  .stat-big { font-size: 48px; }
+  .hero-title { font-size: 56px; }
+}

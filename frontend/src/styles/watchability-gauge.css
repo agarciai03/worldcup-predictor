@@ -1,0 +1,93 @@
+.gauge-block {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 48px;
+  align-items: center;
+  padding: 36px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.gauge-circle-wrap { position: relative; width: 220px; height: 220px; }
+
+.gauge-svg { filter: drop-shadow(0 0 30px rgba(196, 255, 61, 0.15)); }
+
+.gauge-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gauge-score {
+  font-size: 84px;
+  color: var(--bone);
+  line-height: 1;
+}
+
+.gauge-out-of {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--bone-dim);
+  letter-spacing: 0.12em;
+  margin-top: -4px;
+}
+
+.gauge-tier {
+  margin-top: 8px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  padding: 4px 10px;
+  border-radius: 2px;
+}
+
+.gauge-tier.must-watch { background: var(--lime); color: var(--bg-deep); }
+.gauge-tier.recommended { color: var(--lime); background: var(--lime-dim); }
+.gauge-tier.optional { color: var(--bone); border: 1px solid var(--line); }
+.gauge-tier.background { color: var(--mid); }
+
+.gauge-bars { display: flex; flex-direction: column; gap: 14px; }
+
+.gauge-bar-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 50px;
+  align-items: center;
+  gap: 16px;
+}
+
+.gauge-bar-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+}
+
+.gauge-bar-track {
+  height: 6px;
+  background: var(--bg-deep);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.gauge-bar-fill { height: 100%; border-radius: 2px; }
+
+.gauge-bar-value {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--bone);
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .gauge-block { grid-template-columns: 1fr; gap: 32px; justify-items: center; padding: 24px; }
+  .gauge-bars { width: 100%; }
+  .gauge-bar-row { grid-template-columns: 110px 1fr 40px; gap: 10px; }
+  .gauge-bar-label { font-size: 10px; }
+}
