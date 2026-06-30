@@ -1,4 +1,5 @@
-const BASE = '/api'
+const RAILWAY_FALLBACK = 'https://worldcup-predictor-production-cbc7.up.railway.app'
+const BASE = `${import.meta.env.VITE_API_URL || RAILWAY_FALLBACK}/api`
 
 async function safeFetch(path, options) {
   try {
